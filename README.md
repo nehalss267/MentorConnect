@@ -52,12 +52,12 @@ You must have [Node.js](https://nodejs.org/) (which includes npm) installed on y
 
 1.  **Clone the repository** (or download and extract the files) into a new directory.
     ```sh
-     git clone https://github.com/nehalss267/MentorConnect/git
+     git clone https://github.com/nehalss267/MentorConnect
     ```
 3.  **Navigate to the project directory:**
 
     ```sh
-    cd mentor-project
+    cd MentorConnect
     ```
 
 4.  **Install the dependencies:**
