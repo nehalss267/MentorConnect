@@ -1,127 +1,111 @@
-# 🌐 MentorConnect – Underprivileged Youth Mentorship System
+# MentorConnect - Youth Mentorship System
 
-A Node.js + Express + SQLite-based web application designed to connect **underprivileged youth** with **qualified mentors**, enabling career guidance, skill development, and session scheduling.
+MentorConnect is a full-stack web application designed to connect underprivileged youth with experienced mentors. It provides a platform for managing user profiles, booking mentorship sessions, and browsing users by their skills and roles.
 
----
+This project is built with **Node.js**, **Express**, and **SQLite** for the backend, and uses vanilla **HTML, CSS, and JavaScript** for the frontend.
 
 ## 🚀 Features
 
-### 👤 User Management
-
-* Register as **Youth** or **Mentor**
-* Login and profile management
-* Update user details
-
-### 💬 Mentorship Sessions
-
-* Youth can request sessions with mentors
-* Mentors can view, accept, and provide feedback
-* Ratings and feedback tracking
-
-### 🎓 Skills Management
-
-* Centralized skills database
-* Add and list skills by category
-
-### 📊 Dashboard
-
-* View total youth, mentors, and session statistics
-* Track completed and pending mentorship sessions
-
----
+  * **User Authentication:** Secure registration and login for two distinct roles: `youth` and `mentor`.
+  * **Profile Management:** Users can create and update their profiles with details like skills, bio, education, and experience.
+  * **Discover:** Youth can browse a list of available mentors, and mentors can see youth seeking guidance.
+  * **Session Booking:** Youth can request mentorship sessions with a specific mentor by providing a topic and description.
+  * **Session Management:** Mentors can view and update the status of requested sessions (e.g., `accept`, `complete`).
+  * **Skills Catalog:** A dedicated section to view and add new skills to the system's database.
+  * **Admin Dashboard:** A simple dashboard displaying key system statistics, such as the total number of mentors, youth, and sessions.
 
 ## 🛠️ Tech Stack
 
-| Layer          | Technology                    |
-| -------------- | ----------------------------- |
-| **Backend**    | Node.js, Express.js           |
-| **Database**   | SQLite3                       |
-| **Frontend**   | HTML, CSS, Vanilla JavaScript |
-| **API Format** | RESTful JSON-based            |
+  * **Backend:** Node.js, Express.js
+  * **Database:** SQLite3
+  * **Frontend:** HTML5, CSS3, Vanilla JavaScript (ES6+ with `fetch` API)
 
----
+## 📁 Project Structure
 
-## ⚙️ Installation & Setup
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/nehalss267/MentorConnect.git
-cd mentorconnect
-```
-
-### 2. Install Dependencies
-
-```bash
-npm install
-```
-
-### 3. Run the Server
-
-```bash
-node server.js
-```
-
-### 4. Access in Browser
+The project is organized into a clean client-server structure:
 
 ```
-http://localhost:5000
+/mentor-project
+|
+|-- /public/
+|   |-- index.html      # Main (and only) HTML file
+|   |-- style.css       # All frontend styles
+|   |-- script.js       # All client-side logic
+|
+|-- node_modules/       # (Created by npm install)
+|-- .gitignore          # (Recommended: add node_modules/ and *.db)
+|-- mentor_system.db    # (Created automatically on first run)
+|-- package-lock.json
+|-- package.json
+|-- server.js           # Express server, API routes, and DB logic
 ```
 
----
+## 🏁 Getting Started
 
-## 🧩 API Endpoints
+Follow these instructions to get a local copy up and running.
 
-### 👥 Users
+### Prerequisites
 
-| Method | Endpoint         | Description         |
-| ------ | ---------------- | ------------------- |
-| `POST` | `/api/register`  | Register a new user |
-| `POST` | `/api/login`     | User login          |
-| `GET`  | `/api/users/:id` | Get user details    |
-| `PUT`  | `/api/users/:id` | Update user profile |
-| `GET`  | `/api/mentors`   | List all mentors    |
-| `GET`  | `/api/youth`     | List all youth      |
+You must have [Node.js](https://nodejs.org/) (which includes npm) installed on your machine.
 
-### 📅 Sessions
+### Installation & Running
 
-| Method | Endpoint                     | Description                                |
-| ------ | ---------------------------- | ------------------------------------------ |
-| `POST` | `/api/sessions`              | Create a new session                       |
-| `GET`  | `/api/sessions/user/:userId` | Get all sessions for a user                |
-| `PUT`  | `/api/sessions/:id`          | Update session status, feedback, or rating |
+1.  **Clone the repository** (or download and extract the files) into a new directory.
+     git clone https://github.com/nehalss267/MentorConnect/git
+    
+3.  **Navigate to the project directory:**
 
-### 🧠 Skills
+    ```sh
+    cd mentor-project
+    ```
 
-| Method | Endpoint      | Description     |
-| ------ | ------------- | --------------- |
-| `GET`  | `/api/skills` | Get all skills  |
-| `POST` | `/api/skills` | Add a new skill |
+4.  **Install the dependencies:**
 
-### 📊 Dashboard Stats
+    ```sh
+    npm install
+    ```
 
-| Method | Endpoint     | Description                            |
-| ------ | ------------ | -------------------------------------- |
-| `GET`  | `/api/stats` | Get total counts of users and sessions |
+    This will install `express` and `sqlite3`.
 
----
+5.  **Run the server:**
 
-## 🧪 Demo Credentials
+    ```sh
+    npm start
+    ```
 
-| Role   | Email              | Password  |
-| ------ | ------------------ | --------- |
-| Youth  | `student@demo.com` | `demo123` |
-| Mentor | `mentor@demo.com`  | `demo123` |
+    (This runs the `node server.js` script defined in `package.json`).
 
----
+6.  **Open the application** in your browser at:
+    [http://localhost:5000](https://www.google.com/search?q=http://localhost:5000)
 
-## 🧑‍💻 Contributors
+The server will start, automatically create the `mentor_system.db` file if it doesn't exist, and populate it with sample data.
 
-* **Sanchitha V (23BCB0077)**
-* **Nehal Solanki (23BCB0076)**
+## 🔑 Demo Credentials
 
----
+You can use the built-in sample users to test the application:
 
-## 📜 License
+  * **Youth:**
+      * **Email:** `student@demo.com`
+      * **Password:** `demo123`
+  * **Mentor:**
+      * **Email:** `mentor@demo.com`
+      * **Password:** `demo123`
 
-This project is licensed under the **MIT License**.
+## 📡 API Endpoints
+
+The server exposes the following RESTful API endpoints, which the frontend consumes.
+
+| Method | Endpoint | Description |
+| :--- | :--- | :--- |
+| `POST` | `/api/register` | Registers a new user (youth or mentor). |
+| `POST` | `/api/login` | Authenticates a user and returns their profile. |
+| `GET` | `/api/mentors` | Gets a list of all users with the 'mentor' role. |
+| `GET` | `/api/youth` | Gets a list of all users with the 'youth' role. |
+| `GET` | `/api/users/:id` | Gets the profile for a single user by ID. |
+| `PUT` | `/api/users/:id` | Updates a user's profile information. |
+| `POST` | `/api/sessions` | Creates a new mentorship session request. |
+| `GET` | `/api/sessions/user/:userId` | Gets all sessions for a specific user (both as youth and mentor). |
+| `PUT` | `/api/sessions/:id` | Updates a session's status, rating, or feedback. |
+| `GET` | `/api/skills` | Retrieves the list of all skills. |
+| `POST` | `/api/skills` | Adds a new skill to the database. |
+| `GET` | `/api/stats` | Gets the dashboard statistics (total users, sessions, etc.). |
