@@ -46,7 +46,7 @@ A Node.js + Express + SQLite-based web application designed to connect **underpr
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/mentorconnect.git
+git clone https://github.com/nehalss267/mentorconnect.git
 cd mentorconnect
 ```
 
