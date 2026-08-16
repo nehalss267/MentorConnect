@@ -24,3 +24,10 @@ pre { background: #2c3e50; color: white; padding: 15px; border-radius: 5px; over
 .status-pending { color: #f39c12; }
 .status-accepted { color: #27ae60; }
 .status-completed { color: #3498db; }
+.status-declined { color: #e74c3c; }
+.status-cancelled { color: #95a5a6; text-decoration: line-through; }
+.notice { padding: 10px 15px; border-radius: 5px; margin: 10px 0; }
+.notice.success { background: #d5f5e3; color: #1e8449; border-left: 4px solid #27ae60; }
+.notice.error { background: #fadbd8; color: #922b21; border-left: 4px solid #e74c3c; }
+.welcome { margin-top: 10px; font-size: 18px; color: #ecf0f1; }
+.hint { color: #7f8c8d; font-size: 0.9em; margin-top: 8px; }
