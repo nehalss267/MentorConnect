@@ -6,7 +6,7 @@ This project is built with **Node.js**, **Express**, and **SQLite** for the back
 
 ## Features
 
-  * **User Authentication:** Secure registration and login for two distinct roles: `youth` and `mentor`. Passwords are hashed with `bcryptjs`; sessions are cookie-based (`express-session`), not spoofable headers.
+  * **User Authentication:** Secure registration and login for two distinct roles: `youth` and `mentor`.
   * **Profile Management:** Users can create and update their own profiles (name, age, location, bio, skills, education, experience).
   * **Discover:** Youth can browse mentors (and request a session directly), and mentors can see youth seeking guidance. Search/filter by name, skill, or location.
   * **Session Booking:** Youth can request a session with a chosen mentor (from a dropdown — no raw IDs), with topic, description, date, and duration.
@@ -15,7 +15,6 @@ This project is built with **Node.js**, **Express**, and **SQLite** for the back
     * *Youth*: cancel or delete their pending request, rate (1-5) and leave feedback on completed sessions.
   * **Skills Catalog:** View and add skills.
   * **Dashboard:** Live statistics plus the 5 most recent sessions.
-  * **Security:** Input validation, rate limiting on login/register, role-based authorization, foreign-key enforcement, `httpOnly`+`SameSite` cookies, `helmet` security headers (nosniff, frame-ancestors, strict CSP — no inline scripts), session-id rotation on login, XSS-escaped rendering, JSON 404s for unknown API routes.
 
 ## Tech Stack
 
