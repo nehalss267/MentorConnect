@@ -100,15 +100,6 @@ Other seeded users: `priya@demo.com` (youth), `raj@demo.com` and `kumar@demo.com
 | `POST` | `/api/skills` | required | Adds a skill. |
 | `GET` | `/api/stats` | — | Dashboard statistics + `recent_activity` (last 5 sessions). |
 
-## Security Notes
-
-  * Passwords are stored as `bcrypt` hashes — never in plaintext.
-  * Sessions use `httpOnly` + `SameSite=Lax` cookies with a rotating session id on every login; no client-side token storage. The `Secure` flag is enabled when `NODE_ENV=production`.
-  * `requireAuth` middleware guards all protected routes; authorization checks bind every action to the session user (no spoofable IDs, no IDOR).
-  * Server-side validation on all inputs; login/register rate-limited to 30 attempts / 15 minutes.
-  * `helmet` security headers: `X-Content-Type-Options: nosniff`, `X-Frame-Options`, `Referrer-Policy`, and a strict Content-Security-Policy (`script-src 'self'` — the UI uses event delegation, no inline scripts).
-  * Graceful error handling: malformed JSON returns 400, oversized bodies 413, and no stack traces are ever leaked.
-  * For production, set `SESSION_SECRET` (a long random string) via environment variable.
 
 ## Testing
 
